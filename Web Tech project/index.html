@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Word Processor</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-container">
+        <h1 class="app-heading">
+            <span class="logo-icon">📝</span>
+            <span class="gradient-text">Mini Word Processor</span>
+        </h1>
+
+        <div class="toolbar">
+            <!-- Toolbar Buttons -->
+            <button onclick="execCmd('bold')">Bold</button>
+            <button onclick="execCmd('italic')">Italic</button>
+            <button onclick="execCmd('underline')">Underline</button>
+
+            <!-- Font Size -->
+            <select onchange="execCmd('fontSize', this.value)">
+                <option value="2">Small</option>
+                <option value="4">Normal</option>
+                <option value="6">Large</option>
+            </select>
+
+            <!-- Font Family -->
+            <select onchange="execCmd('fontName', this.value)">
+                <option value="Arial">Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Impact">Impact</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Lucida Console">Lucida Console</option>
+            </select>
+
+            <!-- Color Picker -->
+            <input type="color" id="colorPicker" title="Text Color" onchange="changeColor(this.value)">
+        </div>
+
+        <div id="editor" contenteditable="true"></div>
+
+        <div class="status-bar">
+            <p>🔤 Words: <span id="wordCount">0</span></p>
+            <p>🧮 Characters: <span id="charCount">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

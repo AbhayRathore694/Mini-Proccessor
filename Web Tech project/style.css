@@ -1,0 +1,188 @@
+
+/* Reset and Base Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #dbe6f6, #c5796d);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* App Container */
+.app-container {
+    max-width: 950px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 2.2em;
+}
+
+/* Toolbar Styling */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Stylish Buttons and Selects */
+.toolbar button,
+.toolbar select {
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(145deg, #421e3a, #df65b6);
+    color: rgb(35, 19, 19);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.toolbar button:active,
+.toolbar select:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Color Picker Styling */
+.toolbar input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: conic-gradient(red, orange, yellow, lime, cyan, blue, violet, red);
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.toolbar input[type="color"]:hover {
+    transform: scale(1.1);
+}
+
+.toolbar input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 50%;
+}
+
+.toolbar input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* Editor Area */
+#editor {
+    min-height: 260px;
+    border: 2px solid #ccc;
+    padding: 15px;
+    font-size: 17px;
+    line-height: 1.6;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #111;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#editor:empty::before {
+    content: "Start typing here...";
+    color: #bbb;
+    pointer-events: none;
+    user-select: none;
+    font-style: italic;
+}
+
+#editor:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+    outline: none;
+}
+
+/* Status Bar */
+.status-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .status-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Container Heading */
+.app-heading {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.logo-icon {
+    font-size: 1.2em;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #3f0a22, #afcde6, #45a6de);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientText 5s ease infinite;
+    letter-spacing: 1px;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
